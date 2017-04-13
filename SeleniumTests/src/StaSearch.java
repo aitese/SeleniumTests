@@ -15,7 +15,7 @@ public class StaSearch {
 		
 		//WebDriver driver = new ChromeDriver();
 		WebDriver driver = new FirefoxDriver();
-		//ImplicitWait(driver);
+		ImplicitWait(driver);
 		driver.get("http://ukstaging.staexperiences.com/");
 		//WebElement searchBox;
 		WebElement link;
@@ -37,12 +37,12 @@ public class StaSearch {
 		driver.quit();
 	}
 	
-	/*public static void ImplicitWait(WebDriver driver) {
+	public static void ImplicitWait(WebDriver driver) {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	}*/
+	}
 	
 	public static void ExplicitTextWait(WebDriver driver, String text) {
-		(new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(By.linkText(text)));
+		(new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.linkText(text)));
 	}
 	
 	public static void ExplicitLinkWait(WebDriver driver, String text) {
